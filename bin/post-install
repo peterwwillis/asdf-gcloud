@@ -19,7 +19,9 @@ function default_cloud_sdk_components_config_path() {
 	asdf_config_path="${ASDF_CONFIG_FILE:-"$HOME/.asdfrc"}"
 	asdf_config_dir=$(dirname "$asdf_config_path")
 
-	if [ -f "${default_config_dir}/${default_components_filename}" ]; then
+	if [ -f "${default_components_filename} " ] ; then
+		echo "${default_components_filename}"
+	elif [ -f "${default_config_dir}/${default_components_filename}" ]; then
 		echo "${default_config_dir}/${default_components_filename}"
 	elif [ -f "${asdf_config_dir}/${default_components_filename}" ]; then
 		echo "${asdf_config_dir}/${default_components_filename}"
